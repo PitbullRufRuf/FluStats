@@ -1,0 +1,43 @@
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .team-logos {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .team-logo {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .game-button {
+      display: block;
+      width: 200px;
+      height: 40px;
+      background-color: #4CAF50;
+      margin-bottom: 10px;
+      padding: 10px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .game-button:hover {
+      background-color: #45a049;
+    }

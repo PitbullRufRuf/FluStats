@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Player Performance</title>
+  <link rel="stylesheet" href="game1performance.css">
+</head>
+<body>
+  <h1>Player Performance</h1>
+  <div class="search-container">
+    <input class="search-input" type="text" placeholder="Enter player name">
+    <button class="search-button">Search</button>
+  </div>
+  <div id="performance-results"></div>
+
+  <script>
+     var players = [
+      { name: 'German Cano', photo: 'https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt4ead70a8e1d3f305/6451bd91d7799b2b1eb41922/GettyImages-1487193843.jpg?auto=webp&format=pjpg&width=3840&quality=60', age: '35', weight: '75 kg', height: '180 cm' },
+      { name: 'Player 2', photo: 'player2_photo.jpg', age: 27, weight: '80 kg', height: '185 cm' },
+      // Add more player objects as needed
+    ];
+
+    function searchPlayer() {
+      var input = document.querySelector('.search-input');
+      var playerName = input.value;
+
+      var player = players.find(function (player) {
+        return player.name.toLowerCase() === playerName.toLowerCase();
+      });
+
+      if (player) {
+        var performanceResults = document.getElementById('performance-results');
+        performanceResults.innerHTML = '<h2>' + player.name + '</h2>' +
+          '<div class="player-container">' +
+          '  <div class="player-details">' +
+          '    <h3>Player Details</h3>' +
+          '    <img class="player-photo" src="' + player.photo + '" alt="' + player.name + ' Photo">' +
+          '    <p>Age: ' + player.age + '</p>' +
+          '    <p>Weight: ' + player.weight + '</p>' +
+          '    <p>Height: ' + player.height + '</p>' +
+          '  </div>' +
+          '  <div class="player-statistics">' +
+          '    <h3>Player Statistics</h3>' +
+          '    <p>Minutes played: 88</p>' +
+          '    <p>Goals: 3</p>' +
+          '    <p>Assists: 0</p>' +
+          '    <p>Yellow Cards: 0</p>' +
+          '    <p>Red Cards: 0</p>' +
+          '    <p>Shots on target: 5</p>' +
+          '    <p>Shots off target: 1</p>' +
+          '    <p>Blocked shots: 2</p>' +
+          '    <p>Shots on post: 1</p>' +
+          '    <p>Touches: 32</p>' +
+          '    <p>Right passes: 10 (66.7%)</p>' +
+          '    <p>Crosses (prec.): 1 (1)</p>' +
+          '    <p>Long balls (prec.): 1 (0)</p>' +
+          '    <p>Fouls committed: 2</p>' +
+          '    <p>Suffered fouls: 4</p>' +
+          '  </div>' +
+          '  <a class="analysis-button" href="canoanalysis.html">Analysis of ' + player.name + '\'s Performance</a>' +
+          '</div>';
+      } else {
+        var performanceResults = document.getElementById('performance-results');
+        performanceResults.innerHTML = '<p>Player not found.</p>';
+      }
+    }
+
+
+    var searchButton = document.querySelector('.search-button');
+    searchButton.addEventListener('click', searchPlayer);
+  </script>
+</body>
+</html>
